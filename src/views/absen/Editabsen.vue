@@ -18,24 +18,7 @@
       <div class="alert alert-danger" v-if="validation.mahasiswa_id">
         {{ validation.mahasiswa_id[0] }}
       </div>
-  </div>
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Nama Matakuliah</label>
-    <input type="text" class="form-control" id="inputPassword4"
-    v-model="absens.matakuliah_id"/>
-    <div class="alert alert-danger" v-if="validation.matakuliah_id">
-        {{ validation.matakuliah_id[0] }}
-      </div>
-  </div>
-  <div class="col-12">
-    <label for="inputAddress" class="form-label">Keterangan</label>
-    <input type="text" class="form-control" id="inputAddress" 
-    v-model="absens.keterangan" />
-    <div class="alert alert-danger" v-if="validation.keterangan">
-        {{ validation.keterangan[0] }}
-      </div>
-  </div>
-
+  
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Edit</button>
   </div>
@@ -53,9 +36,7 @@ export default {
   setup() {
     const absens = reactive({
       waktu_absen: '',
-      mahasiswa_id: '',
-      matakuliah_id: '',
-      keterangan: ''
+      mahasiswa_id: ''
     })
     const validation = ref([]);
     const router = useRouter();
@@ -66,8 +47,7 @@ export default {
         console.log(response.data.data.mahasiswa_id)
         absens.waktu_absen = response.data.data.waktu_absen
         absens.mahasiswa_id = response.data.data.mahasiswa_id
-        absens.matakuliah_id = response.data.data.matakuliah_id
-        absens.keterangan = response.data.data.keterangan
+        
       }).catch(error =>{
         console.log(error.response.data)
       })
@@ -75,8 +55,7 @@ export default {
     function update(){
       let waktu_absen = absens.waktu_absen
       let mahasiswa_id = absens.mahasiswa_id
-      let matakuliah_id = absens.matakuliah_id
-      let keterangan = absens.keterangan
+     
       axios.put(`http://127.0.0.1:8001/api/absens/${route.params.id}`, {
         waktu_absen: waktu_absen,
         mahasiswa_id: mahasiswa_id,

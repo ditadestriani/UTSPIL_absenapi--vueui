@@ -15,16 +15,16 @@
           <router-link class="nav-link" to="/matkuls">Matakuliah</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/absen">Absensi</router-link>
+          <router-link class="nav-link" to="/absens">Absensi</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/smt">Semester</router-link>
+          <router-link class="nav-link" to="/smts">Semester</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/kontrakmk">Kontrak Matakuliah</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/jdwl">Jadwal</router-link>
+          <router-link class="nav-link" to="/jdwls">Jadwal</router-link>
         </li>
 
       </ul>

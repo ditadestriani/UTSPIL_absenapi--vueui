@@ -18,23 +18,7 @@
       <div class="alert alert-danger" v-if="validation.mahasiswa_id">
         {{ validation.mahasiswa_id[0] }}
       </div>
-  </div>
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Nama Matakuliah</label>
-    <input type="text" class="form-control" id="inputPassword4"
-    v-model="absens.matakuliah_id"/>
-    <div class="alert alert-danger" v-if="validation.matakuliah_id">
-        {{ validation.matakuliah_id[0] }}
-      </div>
-  </div>
-  <div class="col-12">
-    <label for="inputAddress" class="form-label">Keterangan</label>
-    <input type="text" class="form-control" id="inputAddress" 
-    v-model="absens.keterangan" />
-    <div class="alert alert-danger" v-if="validation.keterangan">
-        {{ validation.keterangan[0] }}
-      </div>
-  </div>
+
 
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Add</button>
@@ -53,9 +37,7 @@ export default {
   setup() {
     const absens = reactive({
       waktu_absen: '',
-      mahasiswa_id: '',
-      matakuliah_id: '',
-      keterangan: ''
+      mahasiswa_id: ''
       
     })
     const validation = ref([])
@@ -63,14 +45,9 @@ export default {
     function store(){
       let waktu_absen = absens.waktu_absen
       let mahasiswa_id = absens.mahasiswa_id
-      let matakuliah_id = absens.matakuliah_id
-      let keterangan = absens.keterangan
       axios.post('http://127.0.0.1:8001/api/absens', {
         waktu_absen: waktu_absen,
-        mahasiswa_id: mahasiswa_id,
-        matakuliah_id: matakuliah_id,
-        keterangan: keterangan
-        
+        mahasiswa_id: mahasiswa_id
       }).then(() => {
         router.push({
           name:'Absen'

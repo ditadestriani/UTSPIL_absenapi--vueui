@@ -10,8 +10,6 @@
       <th scope="col">ID</th>
       <th scope="col">Waktu Absen</th>
       <th scope="col">Nama Mahasiswa</th>
-      <th scope="col">Nama Matakuliah</th>
-      <th scope="col">Keterangan</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
@@ -19,9 +17,7 @@
     <tr v-for="(absens, index) in absen" :key="index">
       <td>{{ absens.id }}</td>
       <td>{{ absens.waktu_absen }}</td>
-      <td>{{ absens.mahasiswa_id }}</td>
-      <td>{{ absens.matakuliah_id }}</td>
-      <td>{{ absens.keterangan }}</td>
+      <td>{{ absens.mahasiswa_id }}</td>>
       <td>
         <router-link class="btn btn-success" :to="{name:'Editabsen', params:{id:absens.id}}">Edit</router-link>
         <button @click.prevent="absenDelete(absens.id)" class="btn btn-danger">Delete</button>

@@ -2,9 +2,9 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/mahasiswa/Home.vue'
 import Createmahasiswa from '../views/mahasiswa/Createmahasiswa.vue'
 import Editmahasiswa from '../views/mahasiswa/Editmahasiswa.vue'
-import Index from '../views/matkul/Index.vue'
-import Creatematakuliah from '../views/matkul/Creatematakuliah.vue'
-import Editmatakuliah from '../views/matkul/Editmatakuliah.vue'
+import Index from '../views/matakuliah/Index.vue'
+import Creatematakuliah from '../views/matakuliah/Creatematakuliah.vue'
+import Editmatakuliah from '../views/matakuliah/Editmatakuliah.vue'
 import Absen from '../views/absen/Absen.vue'
 import Createabsen from '../views/absen/Createabsen.vue'
 import Editabsen from '../views/absen/Editabsen.vue'
@@ -62,7 +62,7 @@ const routes = [
   component: Editmatakuliah
 },
 {
-  path: '/absen',
+  path: '/absens',
   name: 'Absen',
   component: Absen
 },
@@ -83,7 +83,7 @@ name: 'Editabsen',
 component: Editabsen
 },
 {
-  path: '/smt',
+  path: '/smts',
   name: 'Smt',
   component: Smt
 },
@@ -125,7 +125,7 @@ name: 'Editkontrak',
 component: Editkontrak
 },
 {
-  path: '/jdwl',
+  path: '/jdwls',
   name: 'Jadwal',
   component: Jadwal
 },
